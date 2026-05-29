@@ -1,4 +1,4 @@
-# McDuffCare – Monorepo Setup & Development Guide
+# McDuffCare – Setup & Development
 
 ## Tech Stack
 
@@ -81,73 +81,73 @@ pnpm admin  # dashboard   → http://localhost:3001
 ```
 mcduffcare/
 ├── apps/
-│   ├── web/                     ← Customer storefront (Next.js 15)
+│   ├── web/                    
 │   │   ├── src/
-│   │   │   ├── app/             ← App Router pages & layouts
-│   │   │   │   ├── layout.tsx        ← Root layout (SEO, analytics, providers)
-│   │   │   │   ├── page.tsx          ← Homepage
-│   │   │   │   ├── sitemap.ts        ← Dynamic sitemap
-│   │   │   │   ├── robots.ts         ← Robots.txt
+│   │   │   ├── app/           
+│   │   │   │   ├── layout.tsx      
+│   │   │   │   ├── page.tsx         
+│   │   │   │   ├── sitemap.ts      
+│   │   │   │   ├── robots.ts       
 │   │   │   │   └── shop/
-│   │   │   │       ├── layout.tsx    ← Header + Footer wrapper
-│   │   │   │       ├── products/     ← Product listing (infinite scroll)
-│   │   │   │       ├── cart/         ← Cart page (add next)
-│   │   │   │       ├── checkout/     ← Checkout (add next)
-│   │   │   │       ├── account/      ← User account (add next)
-│   │   │   │       └── search/       ← Search results (add next)
+│   │   │   │       ├── layout.tsx   
+│   │   │   │       ├── products/    
+│   │   │   │       ├── cart/       
+│   │   │   │       ├── checkout/     
+│   │   │   │       ├── account/
+│   │   │   │       └── search/      
 │   │   │   ├── components/
-│   │   │   │   ├── layout/           ← Header, Footer, Providers, SearchBar
-│   │   │   │   ├── sections/         ← Hero, CategoryGrid, FeaturedProducts…
-│   │   │   │   ├── product/          ← ProductCard, ProductCardSkeleton, Filters
-│   │   │   │   ├── cart/             ← CartDrawer, CartItem (add next)
-│   │   │   │   └── pharmacy/         ← PrescriptionUpload (add next)
+│   │   │   │   ├── layout/          
+│   │   │   │   ├── sections/        
+│   │   │   │   ├── product/        
+│   │   │   │   ├── cart/            
+│   │   │   │   └── pharmacy/         
 │   │   │   ├── lib/
-│   │   │   │   ├── analytics/gtag.ts ← GA4 event helpers
-│   │   │   │   ├── seo/              ← JSON-LD generators (add next)
-│   │   │   │   └── performance/      ← Resource hints (add next)
-│   │   │   └── store/                ← Zustand slices (add next)
+│   │   │   │   ├── analytics/gtag.ts
+│   │   │   │   ├── seo/              
+│   │   │   │   └── performance/     
+│   │   │   └── store/                
 │   │   ├── public/
-│   │   │   └── manifest.json    ← PWA manifest
+│   │   │   └── manifest.json   
 │   │   ├── next.config.ts
 │   │   ├── tailwind.config.ts
 │   │   └── tsconfig.json
 │   │
-│   └── admin/                   ← Admin dashboard (Next.js 15)
+│   └── admin/                   
 │       ├── src/
 │       │   ├── app/
-│       │   │   ├── layout.tsx        ← Root layout (no nav, no SEO indexing)
+│       │   │   ├── layout.tsx       
 │       │   │   └── dashboard/
-│       │   │       ├── layout.tsx    ← Sidebar + Topbar wrapper
-│       │   │       ├── page.tsx      ← Dashboard overview (stats + charts)
-│       │   │       ├── products/     ← Products DataTable (TanStack Table)
-│       │   │       ├── orders/       ← Orders management (add next)
-│       │   │       ├── customers/    ← Customers list (add next)
-│       │   │       ├── analytics/    ← Advanced analytics (add next)
-│       │   │       └── settings/     ← Settings (add next)
+│       │   │       ├── layout.tsx   
+│       │   │       ├── page.tsx     
+│       │   │       ├── products/    
+│       │   │       ├── orders/      
+│       │   │       ├── customers/   
+│       │   │       ├── analytics/   
+│       │   │       └── settings/     
 │       │   └── components/
-│       │       └── layout/           ← AdminSidebar, AdminTopbar, Providers
+│       │       └── layout/          
 │       └── ...configs
 │
 └── packages/
-    ├── ui/                      ← Shared component library
+    ├── ui/                     
     │   └── src/
-    │       ├── components/ui/   ← All shadcn/ui components (Button, Card…)
-    │       ├── types/index.ts   ← All domain TypeScript types
-    │       ├── lib/utils.ts     ← cn(), formatPrice(), debounce()…
-    │       └── styles/globals.css ← CSS vars, brand tokens, base styles
+    │       ├── components/ui/   
+    │       ├── types/index.ts  
+    │       ├── lib/utils.ts    
+    │       └── styles/globals.css 
     │
-    ├── api-client/              ← Shared API layer
+    ├── api-client/             
     │   └── src/
     │       ├── lib/
-    │       │   ├── http-client.ts   ← Axios instance (auth, refresh, retry)
-    │       │   └── query-keys.ts    ← Centralised TanStack Query keys
-    │       ├── services/            ← products, auth, cart, orders, admin
-    │       └── hooks/               ← use-products, use-auth, use-cart, use-admin
+    │       │   ├── http-client.ts  
+    │       │   └── query-keys.ts    
+    │       ├── services/           
+    │       └── hooks/              
     │
     └── config/
-        ├── typescript/          ← base.json, nextjs.json
-        ├── tailwind/            ← Shared brand Tailwind config
-        └── eslint/              ← Strict ESLint config
+        ├── typescript/         
+        ├── tailwind/           
+        └── eslint/             
 ```
 
 ---
@@ -183,30 +183,6 @@ mode. Raw hex values are also available as `brand-*` Tailwind utilities.
 - `robots.ts` blocks account/auth/api routes from crawlers
 - Product pages should add their own `generateMetadata()` function
 
----
-
-## Adding More Pages (Checklist)
-
-1. **Product detail page** – `apps/web/src/app/shop/products/[slug]/page.tsx`
-   - `generateMetadata()` for dynamic title/OG/JSON-LD
-   - Use `useProduct(slug)` hook
-   - Add image gallery, add-to-cart, reviews section
-
-2. **Cart page** – `apps/web/src/app/shop/cart/page.tsx`
-   - Use `useCart()`, `useUpdateCartItem()`, `useRemoveCartItem()`
-
-3. **Checkout** – `apps/web/src/app/shop/checkout/page.tsx`
-   - M-Pesa STK Push via `ordersService.inititateMpesaPay()`
-   - Poll status with `ordersService.checkMpesaStatus()`
-
-4. **Auth pages** – `apps/web/src/app/auth/login/page.tsx` etc.
-   - Use `useLogin()`, `useRegister()`, `useForgotPassword()` hooks
-
-5. **Admin orders** – `apps/admin/src/app/dashboard/orders/page.tsx`
-   - Use `useAdminOrders()` and `useUpdateOrderStatus()` hooks
-
----
-
 ## Build & Deployment
 
 ```bash
@@ -225,33 +201,3 @@ cd apps/web && ANALYZE=true pnpm build
 
 Both apps output `standalone` builds. Deploy each to separate services
 (Vercel, Railway, Fly.io). Set environment variables per-service.
-
----
-
-## Backend API Contract
-
-All requests go to `NEXT_PUBLIC_API_URL` (Laravel).
-Expected response shapes are typed in `packages/ui/src/types/index.ts`.
-
-| Endpoint | Description |
-|----------|-------------|
-| `POST /auth/login` | Returns `AuthResponse` with tokens |
-| `POST /auth/register` | Creates account + tokens |
-| `POST /auth/refresh` | Refreshes access token |
-| `GET /products` | Paginated product list |
-| `GET /products/:slug` | Single product |
-| `GET /products/featured` | Featured products |
-| `GET /products/search?q=` | Search |
-| `GET /categories` | Category tree |
-| `GET /brands` | Brands list |
-| `GET /cart` | Current cart |
-| `POST /cart/items` | Add item |
-| `PUT /cart/items/:id` | Update quantity |
-| `DELETE /cart/items/:id` | Remove item |
-| `POST /orders` | Create order |
-| `POST /payments/mpesa/stkpush` | M-Pesa STK |
-| `GET /payments/mpesa/status/:id` | Poll M-Pesa |
-| `GET /admin/dashboard/stats` | Admin stats |
-| `GET /admin/products` | Admin product list |
-| `GET /admin/orders` | Admin order list |
-| `GET /admin/customers` | Admin customer list |
