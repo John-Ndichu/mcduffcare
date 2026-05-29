@@ -1,0 +1,12 @@
+{
+  "extends": "@mcduffcare/tsconfig/nextjs.json",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@mcduffcare/ui/*": ["../../packages/ui/src/*"],
+      "@mcduffcare/api-client/*": ["../../packages/api-client/src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

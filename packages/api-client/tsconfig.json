@@ -1,0 +1,12 @@
+{
+  "extends": "@mcduffcare/tsconfig/base.json",
+  "compilerOptions": {
+    "paths": {
+      "@mcduffcare/ui/*": ["../../packages/ui/src/*"]
+    },
+    "rootDir": "./src",
+    "outDir": "./dist"
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
