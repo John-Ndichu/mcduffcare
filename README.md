@@ -1,5 +1,3 @@
-# McDuffCare – Setup & Development
-
 ## Tech Stack
 
 | Concern | Technology |
