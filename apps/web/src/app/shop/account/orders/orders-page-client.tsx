@@ -30,7 +30,6 @@ export function OrdersPageClient(): React.JSX.Element {
 
   return (
     <div className="container py-8 lg:py-12 max-w-4xl">
-      {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="mb-6">
         <ol className="flex items-center gap-1.5 text-sm text-muted-foreground">
           <li><Link href="/" className="hover:text-primary">Home</Link></li>
@@ -66,7 +65,6 @@ export function OrdersPageClient(): React.JSX.Element {
               <Card key={order.id} className="hover:shadow-card-hover transition-shadow">
                 <CardContent className="p-5">
                   <div className="flex flex-wrap items-start justify-between gap-4">
-                    {/* Order info */}
                     <div>
                       <div className="flex items-center gap-3">
                         <p className="font-heading font-bold text-sm">#{order.order_number}</p>
@@ -79,7 +77,6 @@ export function OrdersPageClient(): React.JSX.Element {
                         {' · '}
                         {order.items.length} item{order.items.length !== 1 ? 's' : ''}
                       </p>
-                      {/* Items preview */}
                       <div className="mt-2 flex flex-wrap gap-1">
                         {order.items.slice(0, 3).map((item) => (
                           <span key={item.id} className="text-xs text-muted-foreground bg-muted rounded px-1.5 py-0.5">
@@ -92,7 +89,6 @@ export function OrdersPageClient(): React.JSX.Element {
                       </div>
                     </div>
 
-                    {/* Price & actions */}
                     <div className="text-right">
                       <p className="font-heading text-lg font-bold text-primary">
                         {formatPrice(order.total)}
@@ -123,7 +119,6 @@ export function OrdersPageClient(): React.JSX.Element {
             );
           })}
 
-          {/* Pagination */}
           {data.meta.last_page > 1 && (
             <div className="flex items-center justify-center gap-3 pt-4">
               <Button variant="outline" size="sm" onClick={() => setPage((p) => p - 1)} disabled={page === 1}>

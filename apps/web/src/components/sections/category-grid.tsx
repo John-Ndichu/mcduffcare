@@ -10,14 +10,14 @@ import { cn } from '@mcduffcare/ui/lib/utils';
 import { useCategories } from '@mcduffcare/api-client/hooks/use-products';
 
 const FALLBACK_CATEGORIES = [
-  { id: 1, name: 'Prescription Drugs', slug: 'prescription', emoji: '💊', color: 'bg-blue-50 text-blue-700 border-blue-100' },
-  { id: 2, name: 'Vitamins & Supplements', slug: 'supplements', emoji: '🌿', color: 'bg-emerald-50 text-emerald-700 border-emerald-100' },
-  { id: 3, name: 'Skincare & Beauty', slug: 'skincare', emoji: '✨', color: 'bg-pink-50 text-pink-700 border-pink-100' },
-  { id: 4, name: 'Baby & Mum', slug: 'baby-mum', emoji: '👶', color: 'bg-purple-50 text-purple-700 border-purple-100' },
-  { id: 5, name: 'Health Devices', slug: 'devices', emoji: '🩺', color: 'bg-sky-50 text-sky-700 border-sky-100' },
-  { id: 6, name: 'Sexual Health', slug: 'sexual-health', emoji: '❤️', color: 'bg-red-50 text-red-700 border-red-100' },
-  { id: 7, name: 'Eye Care', slug: 'eye-care', emoji: '👁️', color: 'bg-amber-50 text-amber-700 border-amber-100' },
-  { id: 8, name: 'First Aid', slug: 'first-aid', emoji: '🩹', color: 'bg-orange-50 text-orange-700 border-orange-100' },
+  { id: 1, name: 'Prescription Drugs', slug: 'prescription', emoji: '', color: 'bg-blue-50 text-blue-700 border-blue-100' },
+  { id: 2, name: 'Vitamins & Supplements', slug: 'supplements', emoji: '', color: 'bg-emerald-50 text-emerald-700 border-emerald-100' },
+  { id: 3, name: 'Skincare & Beauty', slug: 'skincare', emoji: '', color: 'bg-pink-50 text-pink-700 border-pink-100' },
+  { id: 4, name: 'Baby & Mum', slug: 'baby-mum', emoji: '', color: 'bg-purple-50 text-purple-700 border-purple-100' },
+  { id: 5, name: 'Health Devices', slug: 'devices', emoji: '', color: 'bg-sky-50 text-sky-700 border-sky-100' },
+  { id: 6, name: 'Sexual Health', slug: 'sexual-health', emoji: '', color: 'bg-red-50 text-red-700 border-red-100' },
+  { id: 7, name: 'Eye Care', slug: 'eye-care', emoji: '', color: 'bg-amber-50 text-amber-700 border-amber-100' },
+  { id: 8, name: 'First Aid', slug: 'first-aid', emoji: '', color: 'bg-orange-50 text-orange-700 border-orange-100' },
 ];
 
 export function CategoryGrid(): React.JSX.Element {
@@ -70,7 +70,6 @@ export function CategoryGrid(): React.JSX.Element {
                     'bg-white border-border hover:border-primary/30',
                   )}
                 >
-                  {/* Icon / image */}
                   {'image_url' in cat && cat.image_url !== null && cat.image_url !== undefined ? (
                     <div className="relative mb-3 h-12 w-12 overflow-hidden rounded-full bg-muted">
                       <Image

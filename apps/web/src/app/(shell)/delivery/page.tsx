@@ -76,7 +76,6 @@ export default function DeliveryPage() {
           </p>
         </div>
 
-        {/* Delivery options */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 mb-16">
           {DELIVERY_OPTIONS.map(({ Icon, title, subtitle, price, time, details, badge, color }) => (
             <Card key={title} className={`border-2 ${color}`}>
@@ -112,7 +111,6 @@ export default function DeliveryPage() {
           ))}
         </div>
 
-        {/* Coverage areas */}
         <div className="mb-16">
           <h2 className="font-heading text-2xl font-bold mb-6 flex items-center gap-2">
             <MapPin className="h-6 w-6 text-primary" />
@@ -127,7 +125,6 @@ export default function DeliveryPage() {
           </div>
         </div>
 
-        {/* Important notes */}
         <Card className="bg-brand-light-blue border-primary/20">
           <CardContent className="p-6">
             <h3 className="font-heading font-semibold mb-3">Important Notes</h3>

@@ -1,8 +1,5 @@
 import * as React from 'react';
 
-/**
- * Persist state to localStorage with SSR safety.
- */
 export function useLocalStorage<T>(
   key: string,
   initialValue: T,

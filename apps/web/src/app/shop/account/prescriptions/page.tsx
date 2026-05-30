@@ -61,7 +61,6 @@ export default function PrescriptionsPage() {
         </AlertDescription>
       </Alert>
 
-      {/* Upload area */}
       {!uploaded ? (
         <Card>
           <CardHeader>
@@ -98,7 +97,6 @@ export default function PrescriptionsPage() {
               />
             </div>
 
-            {/* Selected files */}
             {files.length > 0 && (
               <ul className="space-y-2">
                 {files.map((file, i) => (
@@ -153,7 +151,6 @@ export default function PrescriptionsPage() {
         </Card>
       )}
 
-      {/* History */}
       <div>
         <h2 className="mb-4 font-heading text-lg font-semibold">Upload History</h2>
         {mockHistory.length === 0 ? (

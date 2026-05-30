@@ -92,7 +92,6 @@ export function HeroSection(): React.JSX.Element {
             >
               <div className="container relative z-10 flex min-h-[420px] items-center py-12 md:min-h-[500px] lg:min-h-[560px]">
                 <div className="grid w-full grid-cols-1 items-center gap-8 lg:grid-cols-2">
-                  {/* Text */}
                   <div className="text-white">
                     <Badge className="mb-4 bg-white/20 text-white border-white/30 hover:bg-white/30">
                       {slide.badge}
@@ -128,7 +127,6 @@ export function HeroSection(): React.JSX.Element {
                     </div>
                   </div>
 
-                  {/* Image */}
                   <div className="relative hidden h-72 lg:block lg:h-96">
                     <Image
                       src={slide.image}
@@ -142,7 +140,6 @@ export function HeroSection(): React.JSX.Element {
                 </div>
               </div>
 
-              {/* Decorative blobs */}
               <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
                 <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-white/5 blur-3xl" />
                 <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-white/5 blur-3xl" />
@@ -152,7 +149,6 @@ export function HeroSection(): React.JSX.Element {
         </div>
       </div>
 
-      {/* Prev/Next controls */}
       <button
         onClick={scrollPrev}
         aria-label="Previous slide"
@@ -168,7 +164,6 @@ export function HeroSection(): React.JSX.Element {
         <ChevronRight className="h-5 w-5" />
       </button>
 
-      {/* Dots */}
       <div className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2" role="tablist" aria-label="Slides">
         {slides.map((slide, idx) => (
           <button

@@ -1,11 +1,6 @@
-/**
- * Zustand store – lightweight client state (UI only).
- * Server/async data lives in TanStack Query.
- */
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 
-// ── Cart UI state (drawer open/close) ──────────────────────────────────────────
 interface CartUIState {
   isOpen: boolean;
   openCart: () => void;
@@ -20,7 +15,6 @@ export const useCartUI = create<CartUIState>()((set) => ({
   toggleCart: () => set((s) => ({ isOpen: !s.isOpen })),
 }));
 
-// ── Recently viewed products (persisted) ──────────────────────────────────────
 interface RecentlyViewedState {
   productIds: number[];
   addProduct: (id: number) => void;
@@ -44,7 +38,6 @@ export const useRecentlyViewed = create<RecentlyViewedState>()(
   ),
 );
 
-// ── Wishlist (persisted) ────────────────────────────────────────────────────────
 interface WishlistState {
   productIds: number[];
   toggle: (id: number) => void;
@@ -72,7 +65,6 @@ export const useWishlist = create<WishlistState>()(
   ),
 );
 
-// ── UI preferences ─────────────────────────────────────────────────────────────
 interface UIPrefsState {
   productListLayout: 'grid' | 'list';
   setProductListLayout: (layout: 'grid' | 'list') => void;

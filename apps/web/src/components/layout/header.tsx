@@ -4,16 +4,7 @@ import * as React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import {
-  ShoppingCart,
-  Search,
-  User,
-  Menu,
-  Phone,
-  ChevronDown,
-  Heart,
-  MapPin,
-} from 'lucide-react';
+import { ShoppingCart, Search, User, Menu, Phone, ChevronDown, Heart, MapPin } from 'lucide-react';
 
 import { Button } from '@mcduffcare/ui/components/ui/button';
 import { Badge } from '@mcduffcare/ui/components/ui/badge';
@@ -72,23 +63,22 @@ export function Header(): React.JSX.Element {
 
   return (
     <header className="sticky top-0 z-50 w-full">
-      {/* ── Top bar ──────────────────────────────────────────────────────────── */}
       <div className="gradient-brand text-white">
         <div className="container flex h-9 items-center justify-between">
           <div className="flex items-center gap-4 text-xs">
             <a
               href="tel:+254700000000"
-              className="flex items-center gap-1 hover:text-brand-light-blue transition-colors"
+              className="hover:text-brand-light-blue flex items-center gap-1 transition-colors"
             >
               <Phone className="h-3 w-3" />
               <span>+254 700 000 000</span>
             </a>
-            <span className="hidden sm:flex items-center gap-1">
+            <span className="hidden items-center gap-1 sm:flex">
               <MapPin className="h-3 w-3" />
               <span>Free delivery on orders over KES 2,000</span>
             </span>
           </div>
-          <nav className="hidden md:flex items-center gap-4 text-xs">
+          <nav className="hidden items-center gap-4 text-xs md:flex">
             {topNavLinks.map((link) => (
               <Link
                 key={link.href}
@@ -104,16 +94,15 @@ export function Header(): React.JSX.Element {
 
       <div
         className={cn(
-          'bg-white border-b transition-shadow duration-200',
+          'border-b bg-white transition-shadow duration-200',
           isScrolled && 'shadow-md',
         )}
       >
         <div className="container flex h-16 items-center gap-4">
-          {/* Logo */}
           <Link href="/" className="mr-2 flex shrink-0 items-center gap-2">
             <div className="relative h-10 w-32">
               <Image
-                src="/logo.svg"
+                src="/logo.png"
                 alt="McDuffCare Pharmacy"
                 fill
                 className="object-contain object-left"
@@ -127,12 +116,7 @@ export function Header(): React.JSX.Element {
           </div>
 
           <div className="ml-auto flex items-center gap-1">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden"
-              aria-label="Search"
-            >
+            <Button variant="ghost" size="icon" className="md:hidden" aria-label="Search">
               <Search className="h-5 w-5" />
             </Button>
 
@@ -151,8 +135,8 @@ export function Header(): React.JSX.Element {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-48">
                   <div className="px-2 py-1.5">
-                    <p className="text-sm font-semibold font-heading">{user.full_name}</p>
-                    <p className="text-xs text-muted-foreground truncate">{user.email}</p>
+                    <p className="font-heading text-sm font-semibold">{user.full_name}</p>
+                    <p className="text-muted-foreground truncate text-xs">{user.email}</p>
                   </div>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
@@ -179,24 +163,22 @@ export function Header(): React.JSX.Element {
               </Button>
             )}
 
-            {/* Cart */}
- <Button variant="ghost" size="icon" className="relative" asChild>
-  <Link href="/shop/cart" aria-label={`Cart (${cartCount} items)`}>
-    <span className="relative inline-flex">
-      <ShoppingCart className="h-5 w-5" />
-      {cartCount > 0 && (
-        <Badge
-          variant="destructive"
-          className="absolute -right-1 -top-1 h-5 w-5 justify-center rounded-full p-0 text-xs tabular-nums"
-        >
-          {cartCount > 99 ? '99+' : cartCount}
-        </Badge>
-      )}
-    </span>
-  </Link>
-</Button>
+            <Button variant="ghost" size="icon" className="relative" asChild>
+              <Link href="/shop/cart" aria-label={`Cart (${cartCount} items)`}>
+                <span className="relative inline-flex">
+                  <ShoppingCart className="h-5 w-5" />
+                  {cartCount > 0 && (
+                    <Badge
+                      variant="destructive"
+                      className="absolute -right-1 -top-1 h-5 w-5 justify-center rounded-full p-0 text-xs tabular-nums"
+                    >
+                      {cartCount > 99 ? '99+' : cartCount}
+                    </Badge>
+                  )}
+                </span>
+              </Link>
+            </Button>
 
-            {/* Mobile hamburger */}
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden" aria-label="Menu">
@@ -211,8 +193,9 @@ export function Header(): React.JSX.Element {
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={cn(
-                        'px-6 py-3 text-sm font-heading font-medium transition-colors hover:bg-accent hover:text-primary',
-                        pathname === link.href && 'bg-primary/5 text-primary border-l-2 border-primary',
+                        'font-heading hover:bg-accent hover:text-primary px-6 py-3 text-sm font-medium transition-colors',
+                        pathname === link.href &&
+                          'bg-primary/5 text-primary border-primary border-l-2',
                       )}
                     >
                       {link.label}
@@ -225,8 +208,7 @@ export function Header(): React.JSX.Element {
         </div>
       </div>
 
-      {/* ── Navigation bar ────────────────────────────────────────────────────── */}
-      <nav className="hidden bg-white border-b md:block">
+      <nav className="hidden border-b bg-white md:block">
         <div className="container flex h-11 items-center gap-1">
           {mainNavLinks.map((link) =>
             link.hasDropdown === true ? (
@@ -234,7 +216,7 @@ export function Header(): React.JSX.Element {
                 <DropdownMenuTrigger asChild>
                   <button
                     className={cn(
-                      'flex items-center gap-1 px-3 h-full text-sm font-heading font-medium transition-colors hover:text-primary border-b-2 border-transparent',
+                      'font-heading hover:text-primary flex h-full items-center gap-1 border-b-2 border-transparent px-3 text-sm font-medium transition-colors',
                       pathname.startsWith(link.href) && 'text-primary border-primary',
                     )}
                   >
@@ -255,7 +237,7 @@ export function Header(): React.JSX.Element {
                 key={link.href + link.label}
                 href={link.href}
                 className={cn(
-                  'flex items-center px-3 h-full text-sm font-heading font-medium transition-colors hover:text-primary border-b-2 border-transparent',
+                  'font-heading hover:text-primary flex h-full items-center border-b-2 border-transparent px-3 text-sm font-medium transition-colors',
                   pathname === link.href && 'text-primary border-primary',
                 )}
               >

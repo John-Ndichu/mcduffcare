@@ -49,7 +49,6 @@ export function ProductFiltersPanel({ filters, onChange }: ProductFiltersPanelPr
       </div>
 
       <Accordion type="multiple" defaultValue={['category', 'price', 'availability']} className="space-y-0">
-        {/* Category */}
         <AccordionItem value="category" className="border-b">
           <AccordionTrigger className="py-3 font-heading text-sm font-semibold">
             Category
@@ -80,7 +79,6 @@ export function ProductFiltersPanel({ filters, onChange }: ProductFiltersPanelPr
           </AccordionContent>
         </AccordionItem>
 
-        {/* Price range */}
         <AccordionItem value="price" className="border-b">
           <AccordionTrigger className="py-3 font-heading text-sm font-semibold">
             Price Range
@@ -108,7 +106,6 @@ export function ProductFiltersPanel({ filters, onChange }: ProductFiltersPanelPr
           </AccordionContent>
         </AccordionItem>
 
-        {/* Brand */}
         {brands !== undefined && brands.length > 0 && (
           <AccordionItem value="brand" className="border-b">
             <AccordionTrigger className="py-3 font-heading text-sm font-semibold">
@@ -138,7 +135,6 @@ export function ProductFiltersPanel({ filters, onChange }: ProductFiltersPanelPr
           </AccordionItem>
         )}
 
-        {/* Availability */}
         <AccordionItem value="availability" className="border-b">
           <AccordionTrigger className="py-3 font-heading text-sm font-semibold">
             Availability

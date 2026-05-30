@@ -26,7 +26,6 @@ export function NewsletterSection(): React.JSX.Element {
   } = useForm<FormValues>({ resolver: zodResolver(schema) });
 
   const onSubmit = async (data: FormValues) => {
-    // TODO: wire up to API
     await new Promise<void>((resolve) => setTimeout(resolve, 800));
     setSubmitted(true);
     reset();

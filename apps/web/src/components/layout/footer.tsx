@@ -51,10 +51,8 @@ const socialLinks = [
 export function Footer(): React.JSX.Element {
   return (
     <footer className="bg-brand-navy text-white">
-      {/* Main footer */}
       <div className="container py-12 lg:py-16">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
-          {/* Brand column */}
           <div className="lg:col-span-2">
             <Link href="/" className="mb-4 inline-block">
               <Image
@@ -89,7 +87,6 @@ export function Footer(): React.JSX.Element {
                 <span>Nairobi, Kenya</span>
               </p>
             </div>
-            {/* Social */}
             <div className="mt-6 flex items-center gap-3">
               {socialLinks.map(({ Icon, href, label }) => (
                 <a
@@ -106,7 +103,6 @@ export function Footer(): React.JSX.Element {
             </div>
           </div>
 
-          {/* Link columns */}
           {Object.values(footerLinks).map((section) => (
             <div key={section.title}>
               <h3 className="mb-4 font-heading text-sm font-semibold uppercase tracking-wider text-white">
@@ -128,7 +124,6 @@ export function Footer(): React.JSX.Element {
           ))}
         </div>
 
-        {/* Payment methods */}
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <p className="text-sm text-white/60">We accept:</p>
           <div className="flex flex-wrap items-center gap-2">
@@ -146,7 +141,6 @@ export function Footer(): React.JSX.Element {
 
       <Separator className="border-white/10 bg-white/10" />
 
-      {/* Bottom bar */}
       <div className="container flex flex-col items-center justify-between gap-4 py-6 text-center sm:flex-row">
         <p className="text-xs text-white/50">
           &copy; {new Date().getFullYear()} McDuffCare Pharmacy Ltd. All rights reserved.

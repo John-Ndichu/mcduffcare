@@ -66,14 +66,14 @@ export function RegisterPageClient(): React.JSX.Element {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted/20 px-4 py-12">
-      <div className="w-full max-w-md space-y-6 rounded-2xl bg-white p-8 shadow-card">
+    <div className="bg-muted/20 flex min-h-screen items-center justify-center px-4 py-12">
+      <div className="shadow-card w-full max-w-md space-y-6 rounded-2xl bg-white p-8">
         <div className="text-center">
-          <Link href="/" className="inline-block mb-4">
-            <Image src="/logo.svg" alt="McDuffCare" width={150} height={38} />
+          <Link href="/" className="mb-4 inline-block">
+            <Image src="/logo.png" alt="McDuffCare" width={150} height={38} />
           </Link>
           <h1 className="font-heading text-2xl font-bold">Create your account</h1>
-          <p className="mt-1 text-sm text-muted-foreground">
+          <p className="text-muted-foreground mt-1 text-sm">
             Join thousands of Kenyans shopping for health online
           </p>
         </div>
@@ -90,17 +90,37 @@ export function RegisterPageClient(): React.JSX.Element {
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-1.5">
               <Label htmlFor="first_name">First Name</Label>
-              <Input id="first_name" autoComplete="given-name" {...register('first_name')} error={!!errors.first_name} errorMessage={errors.first_name?.message} />
+              <Input
+                id="first_name"
+                autoComplete="given-name"
+                {...register('first_name')}
+                error={!!errors.first_name}
+                errorMessage={errors.first_name?.message}
+              />
             </div>
             <div className="space-y-1.5">
               <Label htmlFor="last_name">Last Name</Label>
-              <Input id="last_name" autoComplete="family-name" {...register('last_name')} error={!!errors.last_name} errorMessage={errors.last_name?.message} />
+              <Input
+                id="last_name"
+                autoComplete="family-name"
+                {...register('last_name')}
+                error={!!errors.last_name}
+                errorMessage={errors.last_name?.message}
+              />
             </div>
           </div>
 
           <div className="space-y-1.5">
             <Label htmlFor="email">Email address</Label>
-            <Input id="email" type="email" autoComplete="email" placeholder="you@example.com" {...register('email')} error={!!errors.email} errorMessage={errors.email?.message} />
+            <Input
+              id="email"
+              type="email"
+              autoComplete="email"
+              placeholder="you@example.com"
+              {...register('email')}
+              error={!!errors.email}
+              errorMessage={errors.email?.message}
+            />
           </div>
 
           <div className="space-y-1.5">
@@ -119,7 +139,11 @@ export function RegisterPageClient(): React.JSX.Element {
               error={!!errors.password}
               errorMessage={errors.password?.message}
               rightElement={
-                <button type="button" onClick={() => setShowPw((p) => !p)} aria-label="Toggle password">
+                <button
+                  type="button"
+                  onClick={() => setShowPw((p) => !p)}
+                  aria-label="Toggle password"
+                >
                   {showPw ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
               }
@@ -128,19 +152,33 @@ export function RegisterPageClient(): React.JSX.Element {
 
           <div className="space-y-1.5">
             <Label htmlFor="password_confirmation">Confirm Password</Label>
-            <Input id="password_confirmation" type={showPw ? 'text' : 'password'} autoComplete="new-password" placeholder="Repeat your password" {...register('password_confirmation')} error={!!errors.password_confirmation} errorMessage={errors.password_confirmation?.message} />
+            <Input
+              id="password_confirmation"
+              type={showPw ? 'text' : 'password'}
+              autoComplete="new-password"
+              placeholder="Repeat your password"
+              {...register('password_confirmation')}
+              error={!!errors.password_confirmation}
+              errorMessage={errors.password_confirmation?.message}
+            />
           </div>
 
           <div className="flex items-start gap-2">
             <Checkbox id="terms" {...register('terms')} className="mt-0.5" />
-            <Label htmlFor="terms" className="text-sm font-normal cursor-pointer leading-relaxed">
+            <Label htmlFor="terms" className="cursor-pointer text-sm font-normal leading-relaxed">
               I agree to the{' '}
-              <Link href="/terms" className="text-primary hover:underline">Terms of Service</Link>{' '}
+              <Link href="/terms" className="text-primary hover:underline">
+                Terms of Service
+              </Link>{' '}
               and{' '}
-              <Link href="/privacy" className="text-primary hover:underline">Privacy Policy</Link>
+              <Link href="/privacy" className="text-primary hover:underline">
+                Privacy Policy
+              </Link>
             </Label>
           </div>
-          {errors.terms !== undefined && <p className="text-xs text-destructive">{errors.terms.message}</p>}
+          {errors.terms !== undefined && (
+            <p className="text-destructive text-xs">{errors.terms.message}</p>
+          )}
 
           <Button type="submit" size="lg" className="w-full" loading={isPending}>
             Create Account
@@ -148,9 +186,11 @@ export function RegisterPageClient(): React.JSX.Element {
         </form>
 
         <Separator />
-        <p className="text-center text-sm text-muted-foreground">
+        <p className="text-muted-foreground text-center text-sm">
           Already have an account?{' '}
-          <Link href="/auth/login" className="font-medium text-primary hover:underline">Sign in</Link>
+          <Link href="/auth/login" className="text-primary font-medium hover:underline">
+            Sign in
+          </Link>
         </p>
       </div>
     </div>

@@ -1,4 +1,4 @@
-# McDuffCare – Setup & Build Guide
+# McDuffCare
 
 ## Prerequisites
 - Node.js >= 20.0.0  

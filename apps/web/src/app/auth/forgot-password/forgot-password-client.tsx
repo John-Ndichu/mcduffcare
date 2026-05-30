@@ -44,12 +44,11 @@ export function ForgotPasswordClient(): React.JSX.Element {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted/20 px-4 py-12">
-      <div className="w-full max-w-sm space-y-6 rounded-2xl bg-white p-8 shadow-card">
-        {/* Logo */}
+    <div className="bg-muted/20 flex min-h-screen items-center justify-center px-4 py-12">
+      <div className="shadow-card w-full max-w-sm space-y-6 rounded-2xl bg-white p-8">
         <div className="text-center">
-          <Link href="/" className="inline-block mb-4">
-            <Image src="/logo.svg" alt="McDuffCare" width={150} height={38} />
+          <Link href="/" className="mb-4 inline-block">
+            <Image src="/logo.png" alt="McDuffCare" width={150} height={38} />
           </Link>
         </div>
 
@@ -59,23 +58,23 @@ export function ForgotPasswordClient(): React.JSX.Element {
               <CheckCircle className="h-8 w-8 text-emerald-600" />
             </div>
             <h1 className="font-heading text-xl font-bold">Check your email</h1>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-muted-foreground text-sm">
               We sent a password reset link to{' '}
               <strong className="text-foreground">{submittedEmail}</strong>.
               <br />
               It expires in 60 minutes.
             </p>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-muted-foreground text-xs">
               Didn&apos;t receive it? Check your spam folder or{' '}
               <button
                 onClick={() => setSubmitted(false)}
-                className="text-primary hover:underline font-medium"
+                className="text-primary font-medium hover:underline"
               >
                 try again
               </button>
               .
             </p>
-            <Button asChild variant="outline" className="w-full mt-4">
+            <Button asChild variant="outline" className="mt-4 w-full">
               <Link href="/auth/login">
                 <ArrowLeft className="h-4 w-4" />
                 Back to Sign In
@@ -86,7 +85,7 @@ export function ForgotPasswordClient(): React.JSX.Element {
           <>
             <div>
               <h1 className="font-heading text-2xl font-bold">Forgot your password?</h1>
-              <p className="mt-1 text-sm text-muted-foreground">
+              <p className="text-muted-foreground mt-1 text-sm">
                 Enter your email and we&apos;ll send you a reset link.
               </p>
             </div>
@@ -94,7 +93,8 @@ export function ForgotPasswordClient(): React.JSX.Element {
             {error !== null && (
               <Alert variant="destructive">
                 <AlertDescription>
-                  {(error as { message?: string }).message ?? 'Something went wrong. Please try again.'}
+                  {(error as { message?: string }).message ??
+                    'Something went wrong. Please try again.'}
                 </AlertDescription>
               </Alert>
             )}
@@ -121,7 +121,7 @@ export function ForgotPasswordClient(): React.JSX.Element {
 
             <Link
               href="/auth/login"
-              className="flex items-center justify-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-primary flex items-center justify-center gap-1 text-sm transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to Sign In

@@ -21,7 +21,6 @@ const STEPS = [
 export default function PrescriptionsPublicPage() {
   return (
     <div className="py-12 lg:py-20">
-      {/* Hero */}
       <section className="gradient-brand py-16 text-white mb-16">
         <div className="container text-center">
           <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-white/20">
@@ -47,7 +46,6 @@ export default function PrescriptionsPublicPage() {
         </div>
       </section>
 
-      {/* How it works */}
       <section className="container mb-16">
         <h2 className="mb-10 text-center font-heading text-2xl font-bold lg:text-3xl">
           How It Works
@@ -74,7 +72,6 @@ export default function PrescriptionsPublicPage() {
         </div>
       </section>
 
-      {/* Requirements */}
       <section className="container mb-16">
         <Card className="bg-brand-light-blue border-primary/20">
           <CardContent className="p-8">
@@ -98,7 +95,6 @@ export default function PrescriptionsPublicPage() {
         </Card>
       </section>
 
-      {/* CTA */}
       <section className="container text-center">
         <h2 className="font-heading text-2xl font-bold mb-2">Ready to order?</h2>
         <p className="text-muted-foreground mb-6">

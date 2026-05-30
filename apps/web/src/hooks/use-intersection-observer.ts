@@ -6,10 +6,6 @@ interface UseIntersectionObserverOptions {
   enabled?: boolean;
 }
 
-/**
- * Lightweight IntersectionObserver hook.
- * Returns a ref to attach and a boolean `inView`.
- */
 export function useIntersectionObserver<T extends Element = HTMLDivElement>(
   options: UseIntersectionObserverOptions = {},
 ): [React.RefCallback<T>, boolean] {

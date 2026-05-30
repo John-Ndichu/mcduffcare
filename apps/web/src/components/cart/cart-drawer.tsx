@@ -72,7 +72,6 @@ export function CartDrawer(): React.JSX.Element {
               <div className="space-y-4 p-5">
                 {cart.items.map((item) => (
                   <div key={item.id} className="flex gap-3">
-                    {/* Image */}
                     <Link href={`/shop/products/${item.product.slug}`} onClick={closeCart} className="shrink-0">
                       <div className="relative h-16 w-16 overflow-hidden rounded-lg bg-muted border">
                         {item.product.primary_image !== null ? (
@@ -87,7 +86,6 @@ export function CartDrawer(): React.JSX.Element {
                       </div>
                     </Link>
 
-                    {/* Details */}
                     <div className="flex flex-1 flex-col justify-between min-w-0">
                       <div className="flex items-start justify-between gap-2">
                         <Link href={`/shop/products/${item.product.slug}`} onClick={closeCart} className="font-heading text-sm font-medium line-clamp-2 hover:text-primary transition-colors">
@@ -125,7 +123,6 @@ export function CartDrawer(): React.JSX.Element {
               </div>
             </ScrollArea>
 
-            {/* Footer */}
             <div className="border-t p-5 space-y-4">
               {cart.discount > 0 && (
                 <div className="flex justify-between text-sm text-emerald-600">

@@ -47,7 +47,6 @@ export default function ReturnsPage() {
         </Alert>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 mb-10">
-          {/* Returnable */}
           <Card className="border-emerald-200">
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center gap-2 text-base text-emerald-700">
@@ -66,7 +65,6 @@ export default function ReturnsPage() {
             </CardContent>
           </Card>
 
-          {/* Non-returnable */}
           <Card className="border-red-200">
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center gap-2 text-base text-red-700">
@@ -86,7 +84,6 @@ export default function ReturnsPage() {
           </Card>
         </div>
 
-        {/* Process */}
         <div className="space-y-6 mb-10">
           <h2 className="font-heading text-xl font-bold">Return Process</h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
@@ -108,7 +105,6 @@ export default function ReturnsPage() {
           </div>
         </div>
 
-        {/* Refund timeline */}
         <Card className="mb-8">
           <CardContent className="p-6">
             <h3 className="font-heading font-semibold mb-4">Refund Timeline</h3>

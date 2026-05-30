@@ -31,7 +31,6 @@ export function OffersPageClient(): React.JSX.Element {
 
   return (
     <div className="py-10 lg:py-14">
-      {/* Hero banner */}
       <div className="gradient-brand py-14 text-white mb-12">
         <div className="container text-center">
         

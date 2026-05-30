@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="py-12 lg:py-20">
-      {/* Hero */}
       <section className="container mb-16 text-center">
         <h1 className="font-heading text-3xl font-bold lg:text-5xl text-balance">
           About McDuffCare Pharmacy
@@ -23,7 +22,6 @@ export default function AboutPage() {
         </p>
       </section>
 
-      {/* Mission */}
       <section className="gradient-brand py-16 text-white mb-16">
         <div className="container grid grid-cols-1 gap-8 lg:grid-cols-2 items-center">
           <div>
@@ -44,7 +42,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values */}
       <section className="container mb-16">
         <h2 className="mb-10 text-center font-heading text-2xl font-bold lg:text-3xl">
           Why Choose McDuffCare?
@@ -67,7 +64,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* PPB notice */}
       <section className="container">
         <div className="rounded-2xl bg-brand-light-blue border border-primary/20 p-8 text-center">
           <p className="text-sm text-muted-foreground">

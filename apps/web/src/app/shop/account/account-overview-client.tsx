@@ -88,7 +88,6 @@ export function AccountOverviewClient(): React.JSX.Element {
         </CardContent>
       </Card>
 
-      {/* Quick links */}
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         {quickLinks.map(({ label, href, icon: Icon, description }) => (
           <Link
@@ -107,7 +106,6 @@ export function AccountOverviewClient(): React.JSX.Element {
         ))}
       </div>
 
-      {/* Recent orders */}
       <Card>
         <CardHeader className="flex flex-row items-center justify-between pb-3">
           <CardTitle className="text-base">Recent Orders</CardTitle>

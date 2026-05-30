@@ -72,7 +72,6 @@ export function OrderDetailClient() {
 
   return (
     <div className="space-y-6">
-      {/* Breadcrumb */}
       <nav aria-label="Breadcrumb">
         <ol className="flex items-center gap-1.5 text-sm text-muted-foreground">
           <li><Link href="/shop/account" className="hover:text-primary">Account</Link></li>
@@ -83,7 +82,6 @@ export function OrderDetailClient() {
         </ol>
       </nav>
 
-      {/* Header */}
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
           <h1 className="font-heading text-2xl font-bold">Order #{order.order_number}</h1>
@@ -114,12 +112,10 @@ export function OrderDetailClient() {
         </div>
       </div>
 
-      {/* Progress tracker */}
       {!['cancelled', 'refunded'].includes(order.status) && (
         <Card>
           <CardContent className="py-6">
             <div className="relative flex items-start justify-between">
-              {/* Progress line */}
               <div className="absolute left-0 right-0 top-5 h-0.5 bg-muted" aria-hidden="true" />
               <div
                 className="absolute left-0 top-5 h-0.5 bg-primary transition-all"
@@ -158,7 +154,6 @@ export function OrderDetailClient() {
       )}
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-        {/* Items */}
         <div className="lg:col-span-2 space-y-4">
           <Card>
             <CardHeader><CardTitle className="text-base">Order Items</CardTitle></CardHeader>
@@ -195,9 +190,7 @@ export function OrderDetailClient() {
           </Card>
         </div>
 
-        {/* Summary sidebar */}
         <div className="space-y-4">
-          {/* Order summary */}
           <Card>
             <CardHeader><CardTitle className="text-base">Summary</CardTitle></CardHeader>
             <CardContent className="space-y-2 text-sm">
@@ -213,7 +206,6 @@ export function OrderDetailClient() {
             </CardContent>
           </Card>
 
-          {/* Shipping address */}
           <Card>
             <CardHeader><CardTitle className="text-sm flex items-center gap-2"><MapPin className="h-4 w-4 text-primary" />Shipping To</CardTitle></CardHeader>
             <CardContent className="text-sm text-muted-foreground space-y-0.5">
@@ -225,7 +217,6 @@ export function OrderDetailClient() {
             </CardContent>
           </Card>
 
-          {/* Payment */}
           <Card>
             <CardHeader><CardTitle className="text-sm flex items-center gap-2"><CreditCard className="h-4 w-4 text-primary" />Payment</CardTitle></CardHeader>
             <CardContent className="text-sm space-y-1">

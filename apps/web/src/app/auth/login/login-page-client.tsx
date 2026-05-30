@@ -53,30 +53,28 @@ export function LoginPageClient(): React.JSX.Element {
 
   return (
     <div className="flex min-h-screen">
-      {/* ── Left panel – brand ─────────────────────────────────────────── */}
-      <div className="hidden gradient-brand lg:flex lg:w-1/2 flex-col items-center justify-center p-12 text-white">
+      <div className="gradient-brand hidden flex-col items-center justify-center p-12 text-white lg:flex lg:w-1/2">
         <Link href="/" className="mb-10">
           <Image src="/logo-white.svg" alt="McDuffCare" width={180} height={45} />
         </Link>
-        <h2 className="font-heading text-3xl font-bold text-center leading-tight">
+        <h2 className="font-heading text-center text-3xl font-bold leading-tight">
           Your Health Partner in Kenya
         </h2>
-        <p className="mt-4 text-white/80 text-center max-w-sm leading-relaxed">
-          Access your prescriptions, track orders, and manage your health profile — all in one place.
+        <p className="mt-4 max-w-sm text-center leading-relaxed text-white/80">
+          Access your prescriptions, track orders, and manage your health profile — all in one
+          place.
         </p>
       </div>
 
-      {/* ── Right panel – form ─────────────────────────────────────────── */}
       <div className="flex w-full flex-col items-center justify-center px-6 py-12 lg:w-1/2">
         <div className="w-full max-w-sm space-y-6">
-          {/* Mobile logo */}
           <Link href="/" className="flex justify-center lg:hidden">
-            <Image src="/logo.svg" alt="McDuffCare" width={160} height={40} />
+            <Image src="/logo.png" alt="McDuffCare" width={160} height={40} />
           </Link>
 
           <div className="text-center lg:text-left">
             <h1 className="font-heading text-2xl font-bold">Welcome back</h1>
-            <p className="mt-1 text-sm text-muted-foreground">
+            <p className="text-muted-foreground mt-1 text-sm">
               Sign in to your account to continue
             </p>
           </div>
@@ -106,10 +104,7 @@ export function LoginPageClient(): React.JSX.Element {
             <div className="space-y-1.5">
               <div className="flex items-center justify-between">
                 <Label htmlFor="password">Password</Label>
-                <Link
-                  href="/auth/forgot-password"
-                  className="text-xs text-primary hover:underline"
-                >
+                <Link href="/auth/forgot-password" className="text-primary text-xs hover:underline">
                   Forgot password?
                 </Link>
               </div>
@@ -135,7 +130,7 @@ export function LoginPageClient(): React.JSX.Element {
 
             <div className="flex items-center gap-2">
               <Checkbox id="remember" {...register('remember')} />
-              <Label htmlFor="remember" className="text-sm font-normal cursor-pointer">
+              <Label htmlFor="remember" className="cursor-pointer text-sm font-normal">
                 Remember me for 30 days
               </Label>
             </div>
@@ -147,9 +142,9 @@ export function LoginPageClient(): React.JSX.Element {
 
           <Separator />
 
-          <p className="text-center text-sm text-muted-foreground">
+          <p className="text-muted-foreground text-center text-sm">
             Don&apos;t have an account?{' '}
-            <Link href="/auth/register" className="font-medium text-primary hover:underline">
+            <Link href="/auth/register" className="text-primary font-medium hover:underline">
               Create one free
             </Link>
           </p>

@@ -54,7 +54,6 @@ export function ContactFormClient() {
   } = useForm<FormValues>({ resolver: zodResolver(schema) });
 
   const onSubmit = async (_data: FormValues) => {
-    // TODO: POST to /contact
     await new Promise<void>((r) => setTimeout(r, 1000));
     setSent(true);
     reset();
@@ -72,7 +71,6 @@ export function ContactFormClient() {
         </div>
 
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
-          {/* Contact info */}
           <div className="space-y-4">
             {CONTACT_INFO.map(({ Icon, label, value, href }) => (
               <Card key={label}>
@@ -95,7 +93,6 @@ export function ContactFormClient() {
             ))}
           </div>
 
-          {/* Contact form */}
           <div className="lg:col-span-2">
             <Card>
               <CardContent className="p-6 sm:p-8">

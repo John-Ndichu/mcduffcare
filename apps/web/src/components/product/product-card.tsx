@@ -59,7 +59,6 @@ export function ProductCard({
           className,
         )}
       >
-        {/* Image */}
         <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-muted">
           {product.primary_image !== null ? (
             <Image
@@ -73,7 +72,6 @@ export function ProductCard({
             <div className="h-full w-full bg-gradient-to-br from-brand-light-blue to-white" />
           )}
         </div>
-        {/* Content */}
         <div className="flex flex-1 flex-col justify-between min-w-0">
           <div>
             <div className="flex flex-wrap gap-1 mb-1">
@@ -116,7 +114,6 @@ export function ProductCard({
           className,
         )}
       >
-        {/* Image wrapper */}
         <Link href={`/shop/products/${product.slug}`} className="relative block aspect-square overflow-hidden bg-muted" tabIndex={-1} aria-hidden="true">
           {product.primary_image !== null ? (
             <Image
@@ -142,7 +139,6 @@ export function ProductCard({
             )}
           </div>
 
-          {/* Quick actions overlay */}
           <div className="absolute right-2 top-2 flex flex-col gap-1.5 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
             <Tooltip>
               <TooltipTrigger asChild>
@@ -176,7 +172,6 @@ export function ProductCard({
           </div>
         </Link>
 
-        {/* Content */}
         <div className="flex flex-1 flex-col p-3">
           <Link href={`/shop/products/${product.slug}`} className="flex-1">
             <p className="text-xs text-muted-foreground">{product.category.name}</p>
@@ -204,7 +199,6 @@ export function ProductCard({
             )}
           </Link>
 
-          {/* Price & CTA */}
           <div className="mt-3 flex items-end justify-between gap-2">
             <div>
               <p className="font-heading text-base font-bold text-primary leading-none">

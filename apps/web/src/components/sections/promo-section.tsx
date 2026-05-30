@@ -11,7 +11,6 @@ export function PromoSection(): React.JSX.Element {
       <div className="container">
         <h2 id="promo-heading" className="sr-only">Special promotions</h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          {/* Banner 1 – Prescriptions */}
           <div className="group relative overflow-hidden rounded-2xl gradient-brand p-8 text-white">
             <div className="relative z-10">
               <Badge className="mb-3 bg-white/20 text-white border-white/30">
@@ -33,7 +32,6 @@ export function PromoSection(): React.JSX.Element {
                 </Link>
               </Button>
             </div>
-            {/* Decorative */}
             <div
               className="absolute -right-10 -top-10 h-48 w-48 rounded-full bg-white/10 blur-2xl transition-transform duration-500 group-hover:scale-110"
               aria-hidden="true"
@@ -44,7 +42,6 @@ export function PromoSection(): React.JSX.Element {
             />
           </div>
 
-          {/* Banner 2 – M-Pesa */}
           <div className="group relative overflow-hidden rounded-2xl bg-brand-navy p-8 text-white">
             <div className="relative z-10">
               <Badge className="mb-3 bg-white/20 text-white border-white/30">

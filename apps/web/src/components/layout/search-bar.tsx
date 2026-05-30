@@ -49,7 +49,6 @@ export function SearchBar({ className }: { readonly className?: string }): React
     inputRef.current?.focus();
   };
 
-  // Close on outside click
   React.useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (containerRef.current !== null && !containerRef.current.contains(e.target as Node)) {
@@ -95,7 +94,6 @@ export function SearchBar({ className }: { readonly className?: string }): React
         />
       </form>
 
-      {/* Dropdown results */}
       {isOpen && (
         <div className="absolute top-full left-0 right-0 mt-1 z-50 rounded-xl border bg-popover shadow-xl animate-fade-in overflow-hidden">
           {isLoading ? (
